@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Curso de Vue 2">
+<meta name="author" content="https://styde.net">
+<link rel="icon" href="favicon.ico">
+
+<title>Curso de Vue 2 - Styde.net</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app" class="container">
+    {{ $data }}
+
+    <!-- required -->
+    <h4>¿Has trabajado con Vue.js?</h4>
+    <div class="radio">
+      <label class="radio-inline">
+        <input type="radio" v-model="vue.exp" :value="true"> Sí
+      </label>
+      <label class="radio-inline">
+        <input type="radio" v-model="vue.exp" :value="false"> No
+      </label>
+    </div>
+
+    <template v-if="vue.exp">
+        <!-- Si la respuesta es sí -->
+        <div class="form-group">
+          <label for="vue_years">¿Cuantos años de experiencia tienes con Vue?</label>
+          <input type="number" v-model="vue.years" class="form-control">
+        </div>
+
+        <!--
+        <div v-if="vue.years < 2" 
+             :class="'form-group' + (descriptionError ? ' has-error' : '')">
+        -->
+
+        <!--
+        <div v-if="vue.years < 2" 
+             :class="descriptionFieldClasses">
+          <label class="control-label">¿Qué te motivó a aprender Vue?</label>
+          <textarea v-model="vue.description" class="form-control" rows="4"></textarea>
+          <p v-if="descriptionError != ''" class="help-block">
+              {{ descriptionError }}
+          </p>
+        </div>
+        -->
+
+        <!-- Si tiene un año de experiencia o menos -->
+        <div v-if="vue.years < 2" class="form-group"
+          :style="[descriptionBasicStyles, descriptionErrorStyles]">
+          <label class="control-label">¿Qué te motivó a aprender Vue?</label>
+          <textarea v-model="vue.description" class="form-control" rows="4"></textarea>
+          <p v-if="descriptionError != ''" class="help-block">
+              {{ descriptionError }}
+          </p>
+        </div>
+
+
+
+        <!-- Si ha trabajado dos años o más -->
+        <div v-else class="form-group">
+          <label for="vue_years">Cuéntanos tu experiencia con Vue.js</label>
+          <textarea v-model="vue.description" class="form-control" rows="4"></textarea>
+        </div>
+    </template>
+
+    <footer class="footer">
+        <p>&copy; 2017 Styde.net.</p>
+    </footer>
+</div>
+
+<script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            vue: {
+                exp: null,
+                years: 0,
+                description: ''
+            }
+        },
+        computed: {
+            descriptionError: function () {
+                var val = this.vue.description.trim();
+
+                if (val == '') {
+                    return 'El campo es obligatorio';
+                }
+
+                if (val.length < 5 ) {
+                    return 'Por favor escribe una descripción mayor a 5 caracteres.';
+                }
+
+                if (val.length > 20) {
+                    return 'Por favor escribe una descripción menor a 20 caracteres.';
+                }
+            },
+            descriptionFieldClasses: function () {
+                return [
+                    'form-group',
+                    { 'has-error': this.descriptionError }
+                ];
+            },
+            descriptionBasicStyles: function () {
+                return {'font-size': '20px', color: '#44a942'};
+            },
+            descriptionErrorStyles: function () {
+                if (this.descriptionError) {
+                    return { color: '#a94442' };
+                }
+
+                return {};
+            }
+        }
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

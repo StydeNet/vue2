@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Curso de Vue 2">
+        <meta name="author" content="https://styde.net">
+        <link rel="icon" href="favicon.ico">
+
+        <title>Curso de Vue 2 - Styde.net</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="app" class="container">
+            <h4>Todas las tareas</h4>
+            <ul>
+                <li v-for="task of tasks">
+                    {{ task.title }}
+                </li>
+            </ul>
+            <h4 v-if="pendingTasks.length">Tareas pendientes</h4>
+            <ul v-if="pendingTasks.length">
+                <li v-for="task of pendingTasks">
+                    {{ task.title | upper }}
+                </li>
+            </ul>
+
+            <form>
+                <input type="text" v-model="new_task" class="form-control">
+                <button class="btn btn-primary"
+                        @click="createTask(true, $event)">
+                    Crear tarea pendiente
+                </button>
+                <button class="btn btn-info"
+                        @click="createTask(false, $event)">
+                    Crear tarea completada
+                </button>
+            </form>
+
+            <footer class="footer">
+                <p>&copy; 2017 Styde.net.</p>
+            </footer>
+        </div>
+
+        <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
+
+        <script>
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    new_task: '',
+                    tasks: [
+                        {
+                            title: 'Aprender Vue.js',
+                            pending: false
+                        },
+                        {
+                            title: 'Inscribirse en Styde',
+                            pending: false
+                        },
+                        {
+                            title: 'Seguir a @Stydenet en Twitter',
+                            pending: false
+                        },
+                    ]
+                },
+                filters: {
+                    upper: function (value) {
+                        return value.toUpperCase();
+                    }
+                },
+                computed: {
+                    pendingTasks: function () {
+                        return this.tasks.filter(function (item) {
+                            return item.pending;
+                        });
+                    }
+                },
+                methods: {
+                    createTask: function (pending, event) {
+                        event.preventDefault();
+
+                        this.tasks.push({
+                            title: this.new_task,
+                            pending: pending
+                        });
+
+                        this.new_task = '';
+                    }
+                }
+            });
+        </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

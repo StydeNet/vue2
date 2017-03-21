@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Curso de Vue 2">
+        <meta name="author" content="https://styde.net">
+        <link rel="icon" href="favicon.ico">
+
+        <title>Curso de Vue 2 - Styde.net</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="app" class="container">
+            <!-- required -->
+            <h4>¿Has trabajado con Vue.js?</h4>
+            <div class="radio">
+              <label class="radio-inline">
+                <input type="radio" v-model="vue.exp" :value="true"> Sí
+              </label>
+              <label class="radio-inline">
+                <input type="radio" v-model="vue.exp" :value="false"> No
+              </label>
+            </div>
+
+            <template v-if="vue.exp">
+                <!-- Si la respuesta es sí -->
+                <div class="form-group">
+                  <label for="vue_years">¿Cuantos años de experiencia tienes con Vue?</label>
+                  <input type="number" v-model="vue.years" class="form-control">
+                </div>
+
+                <!-- Si tiene un año de experiencia o menos -->
+                <div v-if="vue.years == 0"
+                     class="form-group"
+                     v-bind:class="{'has-error': vue.description == ''}">
+                  <label for="vue_years" class="control-label">¿Qué te motivó a aprender Vue?</label>
+                  <textarea v-model="vue.description" class="form-control" rows="4"
+                    placeholder="Cuéntanos donde estás aprendiendo Vue (puntos extras si es en Styde.net)."></textarea>
+                  <span v-show="vue.description == ''"
+                        class="help-block">Por favor completa este campo</span>
+                </div>
+
+                <!-- Si ha trabajado dos años o más -->
+                <div v-else-if="vue.years > 1" class="form-group">
+                  <label for="vue_years">Cuéntanos tu experiencia con Vue.js</label>
+                  <textarea v-model="vue.description" class="form-control" rows="4"
+                    placeholder="Escribe brevemente sobre los proyectos increíbles que realizas con Vue (puntos extra si usas Laravel y aprendiste en Styde)."></textarea>
+                </div>
+            </template>
+
+            <footer class="footer">
+                <p>&copy; 2017 Styde.net.</p>
+            </footer>
+
+            {{ $data }}
+        </div>
+
+        <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+        <script>
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    vue: {
+                        exp: null,
+                        years: 0,
+                        description: ''
+                    }
+                }
+            });
+        </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
