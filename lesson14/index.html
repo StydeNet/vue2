@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Curso de Vue 2">
+        <meta name="author" content="https://styde.net">
+        <link rel="icon" href="favicon.ico">
+
+        <title>Curso de Vue 2 - Styde.net</title>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              rel="stylesheet">
+
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app" class="container">
+            <h2>Tareas</h2>
+
+            <ul class="list-group tasks">
+                <li v-for="task in tasks" class="list-group-item"
+                    :class="{editing: task.editing, completed: !task.pending}">
+                    <a href="#"><span class="glyphicon"
+                                      :class="task.pending ? 'glyphicon-unchecked' : 'glyphicon-check'"
+                                      aria-hidden="true"></span></a>
+
+                    <template v-if="!task.editing">
+                        <span class="description">{{ task.description }}</span>
+
+                        <div>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-edit"
+                                      aria-hidden="true"></span>
+                            </a>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-trash"
+                                      aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-else>
+                        <input type="text" v-model="task.description">
+
+                        <div>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-ok"
+                                      aria-hidden="true"></span>
+                            </a>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-remove"
+                                      aria-hidden="true"></span>
+                            </a>
+                        </div>                        
+                    </template>
+                </li>
+            </ul>
+
+            <form @submit.prevent="createTask" class="new-task-form">
+                <input v-model="new_task" type="text" class="form-control">
+                <button class="btn btn-primary">Crear tarea</button>
+            </form>
+
+            <footer class="footer">
+                <p>&copy; 2017 Styde.net.</p>
+            </footer>
+        </div>
+
+        <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
+
+        <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

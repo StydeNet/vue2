@@ -1,0 +1,64 @@
+body {
+    margin: 10px;
+}
+
+.container {
+    max-width: 650px;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+}
+
+.tasks {
+    margin-bottom: 40px;
+}
+
+.tasks a {
+    text-decoration: none;
+}
+
+.tasks li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tasks li.editing {
+    box-shadow: inset 0 0 5px #999;
+}
+
+.tasks input, .tasks .description {
+    flex: 1;
+    padding: 0 5px;
+}
+
+.tasks input {
+    border: 0;
+}
+
+.tasks input:focus {
+    outline: none;
+}
+
+.completed .description {
+    text-decoration: line-through;
+}
+
+.completed, .completed a {
+    color: #999;
+}
+
+.new-task-form {
+    display: flex;
+}
+
+.new-task-form input {
+    margin-right: 10px;
+}
+
+.container footer {
+    margin: 40px 0;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    color: #999;
+}
