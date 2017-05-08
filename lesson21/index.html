@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Curso de Vue 2">
+        <meta name="author" content="https://styde.net">
+        <link rel="icon" href="favicon.ico">
+
+        <title>Curso de Vue 2 - Styde.net</title>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              rel="stylesheet">
+
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app" class="container">
+            <h2>Tareas</h2>
+
+            <ul class="list-group tasks">
+                <li is="app-task" v-for="(task, index) in tasks"
+                    :tasks="tasks" :task="task" :index="index" @remove="deleteTask"></li>
+            </ul>
+
+            <p><a @click="deleteCompleted">Eliminar tareas completadas</a></p>
+
+            <form @submit.prevent="createTask" class="new-task-form">
+                <input v-model="new_task" type="text" class="form-control">
+                <button class="btn btn-primary">Crear tarea</button>
+            </form>
+
+            <footer class="footer">
+                <p>&copy; 2017 Styde.net.</p>
+            </footer>
+        </div>
+
+        <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>
+
+        <script type="text/x-template" id="task-template">
+                <li class="list-group-item"
+                    :class="{editing: editing, completed: !task.pending}">
+                    <a @click="toggleStatus">
+                        <app-icon :img="task.pending ? 'unchecked' : 'check'" aria-hidden="true"></span>
+                    </a>
+
+                    <template v-if="!editing">
+                        <span class="description">{{ task.description }}</span>
+
+                        <div>
+                            <a @click="edit">
+                                <app-icon img="edit"></app-icon>
+                            </a>
+                            <a @click="remove">
+                                <app-icon img="trash"></app-icon>
+                            </a>
+                        </div>
+                    </template>
+
+                    <template v-else>
+                        <input type="text" v-model="draft">
+
+                        <div>
+                            <a @click="update">
+                                <app-icon img="ok"></app-icon>
+                            </a>
+                            <a @click="discard">
+                                <app-icon img="remove"></app-icon>
+                            </a>
+                        </div>                        
+                    </template>
+                </li>
+        </script>
+
+        <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
