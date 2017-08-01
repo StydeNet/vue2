@@ -16,8 +16,7 @@
 </head>
 <body>
 <div id="app" class="container">
-    {{ $data }}
-
+    
     <!-- required -->
     <h4>¿Has trabajado con Vue.js?</h4>
     <div class="radio">
@@ -37,12 +36,12 @@
         </div>
 
         <!--
-        <div v-if="vue.years < 2" 
+        <div v-if="vue.years < 2"
              :class="'form-group' + (descriptionError ? ' has-error' : '')">
         -->
 
         <!--
-        <div v-if="vue.years < 2" 
+        <div v-if="vue.years < 2"
              :class="descriptionFieldClasses">
           <label class="control-label">¿Qué te motivó a aprender Vue?</label>
           <textarea v-model="vue.description" class="form-control" rows="4"></textarea>
@@ -125,12 +124,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
