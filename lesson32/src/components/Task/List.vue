@@ -1,21 +1,21 @@
 <template>
     <div>
-        <h2 :class="{[$style.subtitle]: hasPendingTasks }">Tareas:</h2>
+        <h2>Tareas:</h2>
 
         <ul class="list-group tasks-list">
-            <app-task v-for="(task, index) in tasks" :key="task.id"
-                :tasks="tasks" :task="task" :index="index" @remove="deleteTask"></app-task>
+            <task-item v-for="(task, index) in tasks" :key="task.id"
+                :tasks="tasks" :task="task" :index="index" @remove="deleteTask"></task-item>
         </ul>
 
     </div>
 </template>
 
 <script>
-import Task from './Task.vue'
+import TaskItem from './ListItem.vue'
 
 export default {
     components: {
-        'app-task': Task
+        'task-item': TaskItem
     },
     props: ['tasks'],
     methods: {
@@ -34,14 +34,6 @@ export default {
 <style lang="scss">
     .tasks-list {
         margin-bottom: 40px;
-    }
-</style>
-
-<style lang="scss" module>
-    @import "sass/variables";
-
-    .subtitle {
-        color: $error-color;
     }
 </style>
 

@@ -33,7 +33,7 @@ export default {
             this.$set(task, 'id', index + 1)
         });
     },
-    data() { 
+    data() {
         return {
             new_task: '',
             tasks: [

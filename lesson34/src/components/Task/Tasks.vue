@@ -1,25 +1,21 @@
 <template>
-    <div id="app" class="container">
-        <app-task-list :tasks="tasks"></app-task-list>
+	<div>
+	    <task-list :tasks="tasks"></task-list>
 
-        <p><a @click="deleteCompleted">Eliminar tareas completadas</a></p>
+	    <p><a @click="deleteCompleted">Eliminar tareas completadas</a></p>
 
-        <app-task-form @created="createTask"></app-task-form>
-
-        <footer class="footer">
-            <p>&copy; 2017 Styde.net.</p>
-        </footer>
-    </div>
+	    <task-form @created="createTask"></task-form>
+	</div>
 </template>
 
 <script>
-import TaskList from './TaskList.vue'
-import TaskForm from './TaskForm.vue'
+import TaskList from './List.vue'	
+import TaskForm from './CreateForm.vue'
 
 export default {
     components: {
-        'app-task-list': TaskList,
-        'app-task-form': TaskForm
+        'task-list': TaskList,
+        'task-form': TaskForm
     },
     methods: {
         createTask(task) {
@@ -37,7 +33,7 @@ export default {
             this.$set(task, 'id', index + 1)
         });
     },
-    data() {
+    data() { 
         return {
             new_task: '',
             tasks: [
@@ -58,37 +54,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss">
-    @import "./sass/app";
-
-    body {
-        margin: 10px;
-    }
-
-    .container {
-        max-width: 650px;
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        footer {
-            margin: 40px 0;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            color: #999;
-        }
-    }
-</style>
-
-
-
-
-
-
-
-
-
-
-

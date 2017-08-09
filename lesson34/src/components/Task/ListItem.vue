@@ -34,8 +34,7 @@
 </template>
 
 <script>
-import EventBus from './event-bus.js'
-import Icon from './Icon.vue'
+import Icon from 'components/Icon.vue'
 
 export default {
     components: {
@@ -79,7 +78,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .task-list-item {
+    .list-group-item.task-list-item {
         display: flex;
         justify-content: space-between;
 
