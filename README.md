@@ -57,6 +57,9 @@ En esta parte del curso aprenderás todo sobre la creación, uso y comunicación
 29. [Instalando Bootstrap Sass con webpack](https://styde.net/instalacion-y-uso-de-bootstrap-sass-con-npm-webpack-y-vue-loader/) - 7:34
 30. [Extraer CSS con webpack y vue-loader](https://styde.net/extraer-css-con-webpack-y-vue-loader/) - 4:12
 31. [Reduciendo el tamaño del CSS en 90%](https://styde.net/reduciendo-el-tamano-del-css-en-un-90-con-purifycss-webpack-y-vue-loader/) - 8:09
+32. [Organización de los componentes](https://styde.net/organizacion-de-los-componentes-en-vue-js-2/) - 20:00
+33. [Instalación y uso de Vue Router](https://styde.net/instalacion-y-uso-de-vue-router-en-vue-js-2/) - 9:34
+34. [Personalizar el estilo del menú de Vue Router](https://styde.net/personalizar-el-estilo-del-menu-de-vue-router/) - 6:09
 
 ### Otros cursos
 
