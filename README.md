@@ -57,9 +57,30 @@ En esta parte del curso aprenderás todo sobre la creación, uso y comunicación
 29. [Instalando Bootstrap Sass con webpack](https://styde.net/instalacion-y-uso-de-bootstrap-sass-con-npm-webpack-y-vue-loader/) - 7:34
 30. [Extraer CSS con webpack y vue-loader](https://styde.net/extraer-css-con-webpack-y-vue-loader/) - 4:12
 31. [Reduciendo el tamaño del CSS en 90%](https://styde.net/reduciendo-el-tamano-del-css-en-un-90-con-purifycss-webpack-y-vue-loader/) - 8:09
+
+## Parte 7: Crea tu primer SPA 
+
 32. [Organización de los componentes](https://styde.net/organizacion-de-los-componentes-en-vue-js-2/) - 20:00
 33. [Instalación y uso de Vue Router](https://styde.net/instalacion-y-uso-de-vue-router-en-vue-js-2/) - 9:34
 34. [Personalizar el estilo del menú de Vue Router](https://styde.net/personalizar-el-estilo-del-menu-de-vue-router/) - 6:09
+35. [Rutas dinámicas con vue-router](https://styde.net/rutas-dinamicas-con-vue-router/) - 10:15
+36. [Manejo de estado básico con Vue](https://styde.net/manejo-de-estado-basico-con-vue-js/) - 8:07
+37. [Manejo de errores 404 con vue-router](https://styde.net/manejo-de-errores-404-con-vue-router/) - 8:40
+38. [Rutas anidadas o sub-rutas con vue-router](https://styde.net/rutas-anidadas-o-sub-rutas-con-vue-router/) - 6:14
+39. [Rutas con nombre en vue-router](https://styde.net/rutas-con-nombre-en-vue-router/) - 9:15
+40. [Modo historia HTML5](https://styde.net/modo-de-historia-html5-con-vue-js-y-laravel/) - 11:55
+41. [Creación de tareas con vue-router](https://styde.net/componente-para-crear-registros-con-vue-router-spa/) - 14:45
+42. [Acciones para completar y eliminar tareas](https://styde.net/acciones-para-completar-y-eliminar-tareas-con-vue-router-spa/) - 8:05
+43. [Edición de registros con vue-router (SPA)](https://styde.net/edicion-de-registros-con-vue-router-spa/) - 7:35
+
+## Parte 8: Render Functions y DOM Virtual
+
+44. [Render Functions, parte 1](https://styde.net/render-functions-en-vue-js/) - 11:15
+45. [Render Functions, parte 2](https://styde.net/render-functions-en-vue-js-2/) - 4:10
+
+## Parte 9: Vuex
+
+46. [Reactividad con Vue.js](https://styde.net/reactividad-con-vue-js/) - 10:40
 
 ### Otros cursos
 
