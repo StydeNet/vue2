@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS demo</title>
+</head>
+<body>
+	<script>
+		function one()
+		{
+			console.log('Uno')
+		}
+
+		function two()
+		{
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					console.log('Dos')
+					resolve() //or reject()
+				}, 2000)
+			})
+		}
+
+		function three()
+		{
+			console.log('Tres')
+		}
+
+		one()
+
+		two()
+			.then(three)
+			.catch(() => {
+				console.log('Ocurrió un error')
+			})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
