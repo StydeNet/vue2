@@ -77,10 +77,16 @@ En esta parte del curso aprenderás todo sobre la creación, uso y comunicación
 
 44. [Render Functions, parte 1](https://styde.net/render-functions-en-vue-js/) - 11:15
 45. [Render Functions, parte 2](https://styde.net/render-functions-en-vue-js-2/) - 4:10
+46. [Reactividad con Vue.js](https://styde.net/reactividad-con-vue-js/) - 10:40
 
 ## Parte 9: Vuex
 
-46. [Reactividad con Vue.js](https://styde.net/reactividad-con-vue-js/) - 10:40
+47. [Introducción a Vuex: El problema](https://styde.net/introduccion-a-vuex-problema/) - 8:00
+48. [Introducción a Vuex: La solución](https://styde.net/introduccion-a-vuex-solucion/) - 7:35
+49. [Introducción a Vuex: Integración con Vue y helpers](https://styde.net/introduccion-a-vuex-integracion-con-vue-js-y-helpers/) - 13:40
+50. [Integrando Vuex en una SPA con Vue.js 2](https://styde.net/integrando-vuex-en-una-spa-con-vue-js-2/) - 18:15
+51. [Uso de Promesas en JavaScript](https://styde.net/uso-de-promesas-en-javascript/) - 8:40
+52. [Manejo de acciones asíncronas con promesas en Vuex](https://styde.net/manejo-de-acciones-asincronas-con-promesas-en-vuex/) - 14:00
 
 ### Otros cursos
 
